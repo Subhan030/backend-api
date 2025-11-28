@@ -1,0 +1,5 @@
+{
+    "problemId": "6921bfb8c207925a491d8267",
+    "languageId": 71,
+    "code": "import sys\n\ndef twoSum(nums, target):\n    prevMap = {} # val : index\n    for i, n in enumerate(nums):\n        diff = target - n\n        if diff in prevMap:\n            return [prevMap[diff], i]\n        prevMap[n] = i\n    return []\n\n# Read input from stdin\nlines = sys.stdin.read().split()\nif not lines:\n    sys.exit(0)\n\ntarget = int(lines[0])\nnums = [int(x) for x in lines[1:]]\n\nresult = twoSum(nums, target)\nprint(result)"
+}
